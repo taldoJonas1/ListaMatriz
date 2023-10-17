@@ -1,11 +1,11 @@
-let exe1 = () => {
+let exe_1 = () => {
     let matriz = []
     leituraMatriz1(matriz)
     resposta1(matriz)
 }
 
     let leituraMatriz1 = (mat) =>{
-        for(i=0;i<3;i++){
+        for(i=0;i<15;i++){
             mat[i] = []
             for(j=0;j<5;j++){
                 mat[i][j] = Number(prompt(`Valor do elemento [${i+1}][${j+1}]`))
@@ -103,16 +103,41 @@ let exe3 = () => {
 
 let exe4 = () => {
     let matriz = []
-    let vetor = []
-    leituraMatriz4(matriz, vetor)
-    resposta4(matriz, vetor)
+    let nomes = []
+    leituraMatriz4(matriz, nomes)
+    resposta4(matriz, nomes)
 }
     let leituraMatriz4 = (mat, vet) => {
         for(i = 0; i < 15; i++){
-            vet[i] = prompt(`Insira o nome do aluno ${i + 1}`)
+            vet[i] = prompt(`Insira o nome do aluno ${i + 1}`).toUpperCase()
             mat[i] = []
             for(j = 0; j < 5; j++){
                 mat[i][j] = Number(prompt(`Nota do(a) ${vet[i]} na prova ${j + 1}`))
             }
         }
+    }
+
+    let resposta4 = (mat, vet) => {
+        let soma
+        let somaTotal = 0
+        let medias = []
+        let sit = []
+        for(i = 0; i < 15; i++){
+            soma = 0
+            for(j = 0; j < 5; j++){
+                soma += mat[i][j]
+                somaTotal += mat[i][j]
+            }
+            medias[i] = soma / 5
+            if(medias[i] >= 6){
+                sit[i] = 'APROVADO(A))'
+            }
+            else{
+                sit[i] = 'REPROVADO(A)'
+            }
+        }
+        for(i = 0; i < 15; i++){
+            alert(`NOME: ${vet[i]}\nMÉDIA: ${medias[i]}\nSITUAÇÃO: ${sit[i]}`)
+        }
+        alert(`A MÉDIA DA TURMA  FOI ${somaTotal / 75}`)
     }
