@@ -141,3 +141,53 @@ let exe4 = () => {
         }
         alert(`A MÉDIA DA TURMA  FOI ${somaTotal / 75}`)
     }
+
+let exe5 = () => {
+    matriz = []
+    meses = ['JANEIRO', 'FEVEREIRO', 'MARÇO', 'ABRIL', 'MAIO', 'JUNHO', 'JULHO', 'AGOSTO', 'SETEMBRO', 'OUTUBRO', 'NOVEMBRO', 'DEZEMBRO']
+    leituraMatriz5(matriz, meses)
+    resposta5A(matriz, meses)
+    resposta5B(matriz)
+    resposta5C(matriz)
+}
+
+    let leituraMatriz5 = (mat, mes) => {
+        for(i = 0; i < 12; i++){
+            mat[i] = []
+            for(j = 0; j < 4; j++){
+                mat[i][j] = Number(prompt(`Arrendamento em vendas na ${i+1}ª semana de ${mes[i]}.(R$)`)).toFixed(2)
+            }
+        }
+    }
+
+    let resposta5A = (mat, mes) => {
+        let soma
+        for(i = 0; i < 12; i++){
+            soma = 0
+            for(i = 0; i < 4; i++){
+                soma += mat[i][j]
+            }
+            alert(`Total em vendas de ${mes[i]}: R$${soma.toFixed(2)}`)
+        }
+    }
+
+    let resposta5B = (mat) => {
+        let soma
+        for(j = 0; j < 4; j++){
+            soma = 0
+            for(i = 0; i < 12; i++){
+                soma += mat[i][j]
+            }
+            alert(`Total em vendas nas ${i}ªs semanas de cada mês: R$${soma.toFixed(2)}`)
+        }
+    }
+
+    let resposta5C = (mat) => {
+        let soma = 0
+        for(i = 0; i < 12; i++){
+            for(i = 0; i < 4; i++){
+                soma += mat[i][j]
+            }
+        }
+        alert(`Faturamento anual da loja: R$${soma.toFixed(2)}`)
+    }
