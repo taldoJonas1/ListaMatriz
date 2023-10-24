@@ -191,3 +191,29 @@ let exe5 = () => {
         }
         alert(`Faturamento anual da loja: R$${soma.toFixed(2)}`)
     }
+
+let exe6 = () => {
+    matriz = []
+    vetor = []
+    leituraMatriz6(matriz, vetor)
+    resposta6(matriz, vetor)
+}
+
+    let leituraMatriz6 = (mat, vet) => {
+        let soma
+        for(i = 0; i < 20; i++){
+            mat[i] = []
+            soma = 0
+            for(j = 0; j < 10; j++){
+                mat[i][j] = Number(prompt(`Insira o elemento na posição [${i+1}][${j+1}]`))
+                soma += mat[i][j]
+            }
+            vet[i].push(soma)
+        }
+    }
+
+    let resposta6 = (mat, vet) => {
+        for(i = 0; i < 20; i++){
+            
+        }
+    }
